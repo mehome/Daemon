@@ -1,3 +1,29 @@
+### 进程的优先级
+
+    Android 系统将尽量长时间地保持应用进程，但为了新建进程或运行更重要的进程，需要清除旧进程来回收内存。
+    为了确定保留或终止哪些进程，系统会对进程进行分类。
+    需要时，系统会首先消除重要性最低的进程，然后是清除重要性稍低一级的进程，依此类推，以回收系统资源。
+
+https://developer.android.google.cn/guide/components/processes-and-threads.html?hl=zh-cn
+
+![](resources/process.png)
+
+### Low Memory Killer
+
+    	系统出于体验和性能上的考虑，app在退到后台时系统并不会真正的kill掉这个进程，而是将其缓存起来。
+    	打开的应用越多，后台缓存的进程也越多。在系统内存不足的情况下，系统开始依据自身的一套进程回收机制来判断要kill掉哪些进程，
+    	以腾出内存来供给需要的app, 这套杀进程回收内存的机制就叫 Low Memory Killer。
+
+    cat /sys/module/lowmemorykiller/parameters/minfree
+
+    示例:adb shell cat /sys/module/lowmemorykiller/parameters/minfree
+
+![](resources/low_memory_kill.png)
+##### 这些数字的单位是page. 1 page = 4 kb
+
+内存阈值在不同的手机上不一样，一旦低于该值,Android便开始按顺序关闭进程. 因此Android开始结束优先级最低的空进程，即当可用内存小于180MB(46080)
+
+
 ### oom_adj
 
 进程的优先级通过进程的adj值来反映，它是linux内核分配给每个系统进程的一个值，进程回收机制根据这个值来决定是否进行回收。adj的值越小，进程的优先级越高。
