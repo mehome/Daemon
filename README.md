@@ -23,7 +23,6 @@ https://developer.android.google.cn/guide/components/processes-and-threads.html?
 
 内存阈值在不同的手机上不一样，一旦低于该值,Android便开始按顺序关闭进程. 因此Android开始结束优先级最低的空进程，即当可用内存小于180MB(46080)
 
-
 ### oom_adj
 
 进程的优先级通过进程的adj值来反映，它是linux内核分配给每个系统进程的一个值，进程回收机制根据这个值来决定是否进行回收。adj的值越小，进程的优先级越高。
