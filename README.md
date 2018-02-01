@@ -17,9 +17,9 @@ adj越大，占用内存越多会被最先kill掉，所以保活就成了降低o
 
 ![](resources/oom_adj1.png)
 
-### 1、[Activity提权](https://github.com/zhaopingfu)
+### 1、[Activity提权](https://github.com/zhaopingfu/Daemon/tree/master/app/src/main/java/com/pf/daemon/keep_activity)
 
-### 2、[Service提权](https://github.com/zhaopingfu)
+### 2、[Service提权](https://github.com/zhaopingfu/Daemon/tree/master/app/src/main/java/com/pf/daemon/keep_service)
 
 ### 3、广播拉活
 
@@ -33,9 +33,9 @@ adj越大，占用内存越多会被最先kill掉，所以保活就成了降低o
 
     有多个app在用户设备上安装，只要开启其中一个就可以将其他的app也拉活。比如手机里装了手Q、QQ空间、兴趣部落等等，那么打开任意一个app后，其他的app也都会被唤醒。
 
-### 4、[系统Service机制拉活](https://github.com/zhaopingfu)
+### 4、[系统Service机制拉活](https://github.com/zhaopingfu/Daemon/tree/master/app/src/main/java/com/pf/daemon/system_service)
 
-### 5、[帐号同步拉活](https://github.com/zhaopingfu)
+### 5、[帐号同步拉活](https://github.com/zhaopingfu/Daemon/tree/master/app/src/main/java/com/pf/daemon/account)
 
 ### 6、其他
 
