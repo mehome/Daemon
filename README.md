@@ -62,7 +62,9 @@ adj越大，占用内存越多会被最先kill掉，所以保活就成了降低o
 
 ### 5、[帐号同步拉活](https://github.com/zhaopingfu/Daemon/tree/master/app/src/main/java/com/pf/daemon/account)
 
-### 6、其他
+### 6、[将上面集中结合起来](https://github.com/zhaopingfu/Daemon/tree/master/process)
+
+### 7、其他
 
     推送拉活
         根据终端不同，在小米手机（包括 MIUI）接入小米推送、华为手机接入华为推送。
