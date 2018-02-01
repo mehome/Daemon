@@ -19,7 +19,11 @@ import android.util.Log;
 @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
 public class MyJobService extends JobService {
 
+    /**
+     * 任务id
+     */
     private static int JOB_ID = 10;
+
     private static final String TAG = "MyJobService";
 
     /**

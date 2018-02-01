@@ -1,8 +1,11 @@
 package com.pf.daemon;
 
+import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+
+import com.pf.daemon.jobschedule.MyJobService;
 import com.pf.daemon.keep_activity.KeepManager;
 
 public class MainActivity extends AppCompatActivity {
@@ -36,9 +39,11 @@ public class MainActivity extends AppCompatActivity {
         // AccountHelper.autoSync(AccountContants.ACCOUNT_NAME);
 
         // JobScheduler 拉活
-        // if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-        // MyJobService.startJob(this);
-        // }
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            MyJobService.startJob(this);
+        } else {
+            Log.e(TAG, "onCreate:Build.VERSION.SDK_INT :" + Build.VERSION.SDK_INT);
+        }
     }
 
     @Override
